@@ -17,7 +17,7 @@ WaveGrad is a fast, high-quality neural vocoder designed by the folks at Google 
 [24 kHz audio samples](https://lmnt.com/assets/wavegrad/24kHz)
 
 ## Pretrained models
-- [24 kHz pretrained model](https://lmnt.com/assets/wavegrad/wavegrad-24kHz.pt) (183 MB, SHA256: `65e9366da318d58d60d2c78416559351ad16971de906e53b415836c068e335f3`)
+[24 kHz pretrained model](https://lmnt.com/assets/wavegrad/wavegrad-24kHz.pt) (183 MB, SHA256: `65e9366da318d58d60d2c78416559351ad16971de906e53b415836c068e335f3`)
 
 ## Install
 
