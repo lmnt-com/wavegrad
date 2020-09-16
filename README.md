@@ -10,14 +10,14 @@ WaveGrad is a fast, high-quality neural vocoder designed by the folks at Google 
 - [x] custom noise schedule (faster inference)
 - [x] programmatic API
 - [x] PyPI package
-- [ ] audio samples
-- [ ] pretrained models
+- [x] audio samples
+- [x] pretrained models
 
 ## Audio samples
-...coming soon...
+[24 kHz audio samples](https://lmnt.com/assets/wavegrad/24kHz)
 
 ## Pretrained models
-...coming soon...
+- [24 kHz pretrained model](https://lmnt.com/assets/wavegrad/wavegrad-24kHz.pt) (183 MB, SHA256: `65e9366da318d58d60d2c78416559351ad16971de906e53b415836c068e335f3`)
 
 ## Install
 
