@@ -16,7 +16,7 @@
 from setuptools import find_packages, setup
 
 
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 DESCRIPTION = 'wavegrad'
 AUTHOR = 'LMNT, Inc.'
 AUTHOR_EMAIL = 'github@lmnt.com'
@@ -42,6 +42,8 @@ CLASSIFIERS = [
 setup(name = 'wavegrad',
     version = VERSION,
     description = DESCRIPTION,
+    long_description = open('README.md', 'r').read(),
+    long_description_content_type = 'text/markdown',
     author = AUTHOR,
     author_email = AUTHOR_EMAIL,
     url = URL,
