@@ -86,7 +86,7 @@ python -m wavegrad.noise_schedule /path/to/trained/model /path/to/preprocessed/v
 python -m wavegrad.inference /path/to/trained/model /path/to/spectrogram -n noise_schedule.npy -o output.wav
 ```
 
-The default settings should give good results without spending too much time on the search. If you'd like to find a better noise scheudle or use a different number of inference iterations, run the `noise_schedule` script with `--help` to see additional configuration options.
+The default settings should give good results without spending too much time on the search. If you'd like to find a better noise schedule or use a different number of inference iterations, run the `noise_schedule` script with `--help` to see additional configuration options.
 
 
 ## References
