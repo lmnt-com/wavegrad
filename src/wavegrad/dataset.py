@@ -65,8 +65,8 @@ class Collator:
       record['audio'] = record['audio'][start:end]
       record['audio'] = np.pad(record['audio'], (0, (end-start) - len(record['audio'])), mode='constant')
 
-    audio = np.stack([record['audio'] for record in minibatch if record['audio'] is not None])
-    spectrogram = np.stack([record['spectrogram'] for record in minibatch if record['spectrogram'] is not None])
+    audio = np.stack([record['audio'] for record in minibatch if 'audio' in record])
+    spectrogram = np.stack([record['spectrogram'] for record in minibatch if 'spectrogram' in record])
     return {
         'audio': torch.from_numpy(audio),
         'spectrogram': torch.from_numpy(spectrogram),
