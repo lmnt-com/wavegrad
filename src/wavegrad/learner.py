@@ -105,7 +105,8 @@ class WaveGradLearner:
         self.step += 1
 
   def train_step(self, features):
-    self.optimizer.zero_grad()
+    for param in self.model.parameters():
+      param.grad = None
 
     audio = features['audio']
     spectrogram = features['spectrogram']
@@ -143,6 +144,8 @@ class WaveGradLearner:
 
 
 def train(dataset, args, params):
+  torch.backends.cudnn.benchmark = True
+
   model = WaveGrad(params).cuda()
   opt = torch.optim.Adam(model.parameters(), lr=params.learning_rate)
 

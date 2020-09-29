@@ -79,4 +79,5 @@ def from_path(data_dirs, params):
       batch_size=params.batch_size,
       collate_fn=Collator(params).collate,
       shuffle=True,
+      pin_memory=True,
       num_workers=os.cpu_count())
