@@ -20,6 +20,7 @@ import torch
 import torchaudio
 
 from glob import glob
+from torch.utils.data.distributed import DistributedSampler
 
 
 class NumpyDataset(torch.utils.data.Dataset):
@@ -73,11 +74,14 @@ class Collator:
     }
 
 
-def from_path(data_dirs, params):
+def from_path(data_dirs, params, is_distributed=False):
+  dataset = NumpyDataset(data_dirs)
   return torch.utils.data.DataLoader(
-      NumpyDataset(data_dirs),
+      dataset,
       batch_size=params.batch_size,
       collate_fn=Collator(params).collate,
-      shuffle=True,
+      shuffle=not is_distributed,
+      sampler=DistributedSampler(dataset) if is_distributed else None,
       pin_memory=True,
+      drop_last=True,
       num_workers=os.cpu_count())

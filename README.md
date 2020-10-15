@@ -3,15 +3,18 @@
 
 WaveGrad is a fast, high-quality neural vocoder designed by the folks at Google Brain. The architecture is described in [WaveGrad: Estimating Gradients for Waveform Generation](https://arxiv.org/pdf/2009.00713.pdf). In short, this model takes a log-scaled Mel spectrogram and converts it to a waveform via iterative refinement.
 
-## Status
+## Status (2020-10-15)
 - [x] stable training (22 kHz, 24 kHz)
 - [x] high-quality synthesis
 - [x] mixed-precision training
+- [x] multi-GPU training
 - [x] custom noise schedule (faster inference)
-- [x] programmatic API
+- [x] command-line inference
+- [x] programmatic inference API
 - [x] PyPI package
 - [x] audio samples
 - [x] pretrained models
+- [ ] precomputed noise schedule
 
 ## Audio samples
 [24 kHz audio samples](https://lmnt.com/assets/wavegrad/24kHz)
