@@ -57,16 +57,23 @@ class WaveGradLearner:
     self.summary_writer = None
 
   def state_dict(self):
+    if hasattr(self.model, 'module') and isinstance(self.model.module, nn.Module):
+      model_state = self.model.module.state_dict()
+    else:
+      model_state = self.model.state_dict()
     return {
         'step': self.step,
-        'model': { k: v.cpu() if isinstance(v, torch.Tensor) else v for k, v in self.model.state_dict().items() },
+        'model': { k: v.cpu() if isinstance(v, torch.Tensor) else v for k, v in model_state.items() },
         'optimizer': { k: v.cpu() if isinstance(v, torch.Tensor) else v for k, v in self.optimizer.state_dict().items() },
         'params': dict(self.params),
         'scaler': self.scaler.state_dict(),
     }
 
   def load_state_dict(self, state_dict):
-    self.model.load_state_dict(state_dict['model'])
+    if hasattr(self.model, 'module') and isinstance(self.model.module, nn.Module):
+      self.model.module.load_state_dict(state_dict['model'])
+    else:
+      self.model.load_state_dict(state_dict['model'])
     self.optimizer.load_state_dict(state_dict['optimizer'])
     self.scaler.load_state_dict(state_dict['scaler'])
     self.step = state_dict['step']
