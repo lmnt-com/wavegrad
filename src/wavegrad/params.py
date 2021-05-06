@@ -27,6 +27,8 @@ class AttrDict(dict):
     elif isinstance(attrs, (list, tuple, set)):
       for attr in attrs:
         self.override(attr)
+    elif attrs is None:
+      pass
     else:
       raise NotImplementedError
     return self
