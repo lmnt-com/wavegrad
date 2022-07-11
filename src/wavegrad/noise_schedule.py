@@ -64,8 +64,8 @@ def main(args):
   max_audio_len = 0
   max_spec_len = 0
   for filename in audio_filenames[:args.batch_size]:
-    clip, _ = T.load_wav(filename)
-    clip = clip[0].numpy() / 32767.5
+    clip, _ = T.load(filename)
+    clip = clip[0].numpy()
     spec = np.load(f'{filename}.spec.npy')
     audio.append(clip)
     spectrogram.append(spec)

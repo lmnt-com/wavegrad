@@ -16,7 +16,7 @@
 from setuptools import find_packages, setup
 
 
-VERSION = '0.1.4'
+VERSION = '0.1.5'
 DESCRIPTION = 'wavegrad'
 AUTHOR = 'LMNT, Inc.'
 AUTHOR_EMAIL = 'github@lmnt.com'
@@ -54,7 +54,7 @@ setup(name = 'wavegrad',
     install_requires = [
         'numpy',
         'torch>=1.6',
-        'torchaudio>=0.6.0',
+        'torchaudio>=0.9.0',
         'tqdm'
     ],
     classifiers = CLASSIFIERS)
