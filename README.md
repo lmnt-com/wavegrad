@@ -1,6 +1,9 @@
 # WaveGrad
 ![PyPI Release](https://img.shields.io/pypi/v/wavegrad?label=release) [![License](https://img.shields.io/github/license/lmnt-com/wavegrad)](https://github.com/lmnt-com/wavegrad/blob/master/LICENSE)
 
+**We're hiring!** 
+If you like what we're building here, [come join us at LMNT](https://explore.lmnt.com).
+
 WaveGrad is a fast, high-quality neural vocoder designed by the folks at Google Brain. The architecture is described in [WaveGrad: Estimating Gradients for Waveform Generation](https://arxiv.org/pdf/2009.00713.pdf). In short, this model takes a log-scaled Mel spectrogram and converts it to a waveform via iterative refinement.
 
 ## Status (2020-10-15)
